@@ -1,0 +1,13 @@
+comentarios: //comentario 
+/*comentario de varias
+lineas
+*/
+identificador
+cadenas y numeros
+
+simbolos: <, >, !, -, (,), ;
+palabras reservadas: Controles, propiedades, Colocacion
+Etiqueta, Boton, Check, RadioBoton, Texto, AreaTexto, Clave, Contenedor
+setTexto, setAlineacion, setColorFondo, setMarcada, setAlineacion
+setColorLetra, setGrupo, setAncho, setAlto, Centro, Izquierdo, Derecho
+setPosicion, add, this,
