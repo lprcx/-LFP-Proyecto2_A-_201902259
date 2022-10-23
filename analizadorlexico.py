@@ -139,21 +139,21 @@ class analizadorlexico():
                     elif buffer == "Contenedor":
                         self.listatokens.append(token(buffer, "rcontenedor", linea, columna))
                     elif buffer == "setTexto":
-                        self.listatokens.append(token(buffer, "settext", linea, columna))
+                        self.listatokens.append(token(buffer, "setTexto", linea, columna))
                     elif buffer == "setAlineacion":
-                        self.listatokens.append(token(buffer, "setal", linea, columna))
+                        self.listatokens.append(token(buffer, "setAlineacion", linea, columna))
                     elif buffer == "setColorFondo":
-                        self.listatokens.append(token(buffer, "setcolfon", linea, columna))
+                        self.listatokens.append(token(buffer, "setColorFondo", linea, columna))
                     elif buffer == "setMarcada":
-                        self.listatokens.append(token(buffer, "setmarc", linea, columna))
+                        self.listatokens.append(token(buffer, "setMarcada", linea, columna))
                     elif buffer == "setColorLetra":
-                        self.listatokens.append(token(buffer, "setcolet", linea, columna))
+                        self.listatokens.append(token(buffer, "setColorLetra", linea, columna))
                     elif buffer == "setGrupo":
-                        self.listatokens.append(token(buffer, "setgrup", linea, columna))
+                        self.listatokens.append(token(buffer, "setGrupo", linea, columna))
                     elif buffer == "setAncho":
-                        self.listatokens.append(token(buffer, "sancho", linea, columna))
+                        self.listatokens.append(token(buffer, "setAncho", linea, columna))
                     elif buffer == "setAlto":
-                        self.listatokens.append(token(buffer, "salto", linea, columna))
+                        self.listatokens.append(token(buffer, "setAlto", linea, columna))
                     elif buffer == "Centro":
                         self.listatokens.append(token(buffer, "rcentro", linea, columna))
                     elif buffer == "Izquierdo":
@@ -161,11 +161,15 @@ class analizadorlexico():
                     elif buffer == "Derecho":
                         self.listatokens.append(token(buffer, "rderecho", linea, columna))
                     elif buffer == "setPosicion":
-                        self.listatokens.append(token(buffer, "setpos", linea, columna))
+                        self.listatokens.append(token(buffer, "setPosicion", linea, columna))
                     elif buffer == "add":
                         self.listatokens.append(token(buffer, "radd", linea, columna))
                     elif buffer == "this":
                         self.listatokens.append(token(buffer, "rthis", linea, columna))
+                    elif buffer == "true":
+                        self.listatokens.append(token(buffer, "rtrue", linea, columna))
+                    elif buffer == "false":
+                        self.listatokens.append(token(buffer, "rfalse", linea, columna))
                     else:
                         self.listatokens.append(token(buffer, "identificador", linea, columna))
                     buffer = ""

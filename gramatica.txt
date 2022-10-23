@@ -1,0 +1,81 @@
+°°°Gramatica Libre de Contexto°°°
+No terminales:
+ptocoma...
+
+Terminales:
+
+
+
+INICIO::=INSTRUCCIONES
+
+INSTRUCCIONES::= INSTRUCCION INSTRUCCIONES2
+                
+INSTRUCCIONES2::= INSTRUCCION INSTRUCCIONES2
+                | EPHSILON << EOF >> 
+
+INSTRUCCION::= PROPIEDADES
+                | CONTROLES
+                | COLOCACION
+
+PROPIEDADES::= menorque exclamacion guion guion rpropiedades INSPROPIEDADES rpropiedades guion guion mayorque
+
+CONTROLES::= menorque exclamacion guion guion rescontroles INSCONTROLES rescontroles guion guion mayorque
+
+COLOCACION::= menorque exclamacion guion guion rcolocacion INSCOLOCACION rcolocacion guion guion mayorque
+
+INSPROPIEDADES::= INSPROPIEDADES2 INSPROPIEDADES3
+
+INSPROPIEDADES3::= INSPROPIEDADES2 INSPROPIEDADES3
+                    | EPHSILON guion 
+
+INSPROPIEDADES2::= COLOR_LETRA 
+                    | COLOR_FONDO
+                    | ALINEACION
+                    | TEXTO
+                    | MARCA_CONTROL
+                    | GRUPO 
+                    | TAMAÑO
+
+COLOR_LETRA::= identificador pto setColorLetra parabre digito coma digito coma digito parcierra
+
+COLOR_FONDO::= identificador pto setColorFondo parabre digito coma digito coma digito parcierra
+
+ALINEACION::= identificador pto setAlineacion parabre POSICION parcierra
+
+POSICION::= rcentro
+            | rizquierdo
+            | rderecho
+
+TEXTO::= identificador pto setTexto parabre cadena parcierra
+
+MARCA_CONTROL::= identificador pto setMarcada parabre rtrue parcierra
+                | identificador pto setMarcada parabre rfalse parcierra
+
+GRUPO::= identificador pto setGrupo parabre identificador parcierra
+
+TAMAÑO::= identificador pto setAlto parabre digito parcierra
+        | dentificador pto setAncho parabre digito parcierra
+
+
+INSCONTROLES::= INSCONTROLES2 INSCONTROLES3
+
+INSCONTROLES3::= INSCONTROLES2 INSCONTROLES3
+                | EPHSILON guion
+
+INSCONTROLES2::= retiqueta identificador
+                | rboton identificador
+                | rcheck identificador
+                | radboton identificador
+                | rtexto identificador
+                | artexto identificador
+                | rclave identificador
+                | rcontenedor identificador
+
+INSCOLOCACION::= INSCOLOCACION2 INSCOLOCACION3
+
+INSCOLOCACION3::= INSCOLOCACION2 INSCOLOCACION3
+                | EPHSILON guion
+
+INSCOLOCACION2::= identificador pto setpos parabre digito coma digito parcierra
+                | identificador pto radd parabre identificador parcierra
+                | rthis pto radd parabre identificador parcierra
